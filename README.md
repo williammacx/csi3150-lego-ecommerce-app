@@ -1,16 +1,45 @@
-# React + Vite
+# LEGO SHOP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-commerce web application for shopping LEGO built with React. Users can browse LEGO sets, filter by category, sort by price, add items to a cart, and apply a discount.
 
-Currently, two official plugins are available:
+# AUTHOR
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+William MacLean
 
-## React Compiler
+## Vercel
+https://csi3150-lego-ecommerce-app.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
+- React
+- JavaScript
+- CSS
+- Vercel
+- Git and GitHub
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Product Browsing
+- View LEGO sets
+- Sort by theme (City, Batman, Star Wars)
+- Sort by price
+
+### Shopping Cart
+- Add/remove items from cart
+- See price total
+- See how many of each set are in stock
+
+### Product View
+- Modal popup that shows product details
+
+### Discount System
+- Promo code: `OAKLAND20` for 20% discount
+
+## HOW TO RUN
+
+```bash
+git clone https://github.com/williammacx/csi3150-lego-ecommerce-app.git
+cd csi3150-lego-ecommerce-app
+npm install
+npm run dev
+
+
