@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 
-function ProductList({ products, addToCart, openModal }) {
+function ProductList({ products, addToCart, openModal, wishlist, toggleWishlist }) {
   return (
     <div>
       {products.map(p => (
@@ -9,6 +9,8 @@ function ProductList({ products, addToCart, openModal }) {
           product={p}
           addToCart={addToCart}
           openModal={openModal}
+          wishlist={wishlist}
+          toggleWishlist={toggleWishlist}
         />
       ))}
     </div>

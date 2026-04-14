@@ -68,6 +68,14 @@ function App() {
     );
   };
 
+  const toggleWishlist = (productId) => {
+  setWishlist((prev) =>
+    prev.includes(productId)
+      ? prev.filter((id) => id !== productId)
+      : [...prev, productId]
+  );
+};
+
   const applyPromo = () => {
     if (promoCode.toUpperCase() === "OAKLAND20") {
       setDiscount(0.2);
@@ -75,7 +83,10 @@ function App() {
       setDiscount(0);
       alert("Invalid code");
     }
+
   };
+
+
 
   const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
   const subtotal = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
@@ -95,6 +106,8 @@ function App() {
         products={filteredProducts}
         addToCart={addToCart}
         openModal={setSelectedProduct}
+        wishlist={wishlist}
+        toggleWishlist={toggleWishlist}
       />
 
       <Cart
@@ -108,6 +121,21 @@ function App() {
         setDiscount={setDiscount}
         discount={discount}
       />
+
+      <div className="wishlist-section">
+  <h2>Wishlist</h2>
+  {wishlist.length === 0 ? (
+    <p>No items in wishlist.</p>
+  ) : (
+    <ul>
+      {products
+        .filter((p) => wishlist.includes(p.id))
+        .map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+    </ul>
+  )}
+</div>
 
       {selectedProduct && (
         <ProductModal

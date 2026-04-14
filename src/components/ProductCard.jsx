@@ -1,4 +1,4 @@
-function ProductCard({ product, addToCart, openModal }) {
+function ProductCard({ product, addToCart, openModal, wishlist, toggleWishlist }) {
   return (
     <div className="product-card">
       <img src={product.image} alt={product.name} className="product-image" />
@@ -8,6 +8,7 @@ function ProductCard({ product, addToCart, openModal }) {
         <p>${product.price}</p>
         <p>Stock: {product.stock}</p>
 
+      <div className="button-group">
         <button
           onClick={() => addToCart(product)}
           disabled={product.stock === 0}
@@ -16,6 +17,10 @@ function ProductCard({ product, addToCart, openModal }) {
         </button>
 
         <button onClick={() => openModal(product)}>View</button>
+        <button onClick={() => toggleWishlist(product.id)}>
+        {wishlist.includes(product.id) ? "Remove from Wishlist" : "Add to Wishlist"}
+        </button>
+        </div>
       </div>
     </div>
   );
