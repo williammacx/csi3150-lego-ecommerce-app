@@ -1,4 +1,4 @@
-function Cart({ cart, removeFromCart, subtotal, total, promoCode, setPromoCode, applyPromo }) {
+function Cart({ cart, removeFromCart, subtotal, total, promoCode, setPromoCode, applyPromo, setDiscount, discount }) {
   return (
     <div>
       <h2>Cart</h2>
@@ -15,6 +15,17 @@ function Cart({ cart, removeFromCart, subtotal, total, promoCode, setPromoCode, 
 
       <input value={promoCode} onChange={(e) => setPromoCode(e.target.value)} />
       <button onClick={applyPromo}>Apply</button>
+
+      {discount > 0 && (
+      <button
+      className="remove-discount-btn"
+      onClick={() => {
+        setDiscount(0);
+        setPromoCode("");
+      }
+    }
+    >Remove Discount</button>
+  )}
     </div>
   );
 }

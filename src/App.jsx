@@ -79,7 +79,7 @@ function App() {
 
   const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
   const subtotal = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
-  const total = subtotal - subtotal * discount;
+  const total = (subtotal - subtotal * discount).toFixed(2);
 
   return (
     <div className="app-container">
@@ -105,6 +105,8 @@ function App() {
         promoCode={promoCode}
         setPromoCode={setPromoCode}
         applyPromo={applyPromo}
+        setDiscount={setDiscount}
+        discount={discount}
       />
 
       {selectedProduct && (

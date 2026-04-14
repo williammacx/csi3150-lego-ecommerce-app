@@ -130,3 +130,7 @@ select:hover {
 option {
   color: black;
 }
+
+.remove-discount-btn {
+  margin-left: 10px;
+}
